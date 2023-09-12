@@ -16,7 +16,7 @@ body {
 header {
   display: flex;
   justify-content: center;
-  background: linear-gradient(180deg, #0c7c85, #053d45);
+  background-i: linear-gradient(180deg, #0c7c85, #053d45);
 }
 
 h1 {
@@ -179,13 +179,81 @@ footer {
   display: flex;
   justify-content: left;
   height: 100px;
-  font-family: "Courier New", Courier, monospace;
-  color: antiquewhite;
+  font-family: inherit;
+  color: white;
   font-size: 12px;
   background: linear-gradient(180deg, #053d45, #0c7c85);
 }
 
-#btn-woman {
-  background-color: red;
-  color: black;
+.navbar {
+  background-color: #f40707;
+  color: #360e9d;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.navbtn {
+  position: relative;
+}
+
+.navbtn button {
+  background-color: transparent;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 150px;
+}
+
+ul li {
+  padding: 10px;
+}
+
+.navbtn:hover ul {
+  display: block;
+}
+
+ul li button {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  text-align: left;
+}
+
+ul li button:hover {
+  background-color: #e40fd2;
+}
+
+#btn-home {
+  background-color: transparent;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+#loading-gif {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loading-gif img {
+  width: 100px; /* Ajusta el tamaño del GIF según tus necesidades */
+  height: 100px;
 }
