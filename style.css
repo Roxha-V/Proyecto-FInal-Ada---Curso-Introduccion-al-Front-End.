@@ -6,8 +6,14 @@
 
 body {
   margin: 0;
-  background-color: #053d45;
+  background-image: url(pagebackground.jpg);
+  background-repeat: round;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed, scroll;
 }
+
 @font-face {
   font-family: "getschwifty";
   src: url(get_schwifty.ttf);
@@ -16,7 +22,7 @@ body {
 header {
   display: flex;
   justify-content: center;
-  background-i: linear-gradient(180deg, #0c7c85, #053d45);
+  background-image: linear-gradient(180deg, #0c7c85, #053d45);
 }
 
 h1 {
@@ -48,8 +54,8 @@ h1 {
 .card {
   width: 500px;
   height: 600px;
-  border: 2px solid #d2e054;
-  background-color: #0c7c85;
+  border: 4px solid #def03d;
+  background-color: #000000ec;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,14 +73,16 @@ h1 {
 }
 
 .resume h2 {
-  padding-bottom: 15px;
+  padding-bottom: 13px;
   font-weight: 400;
   line-height: 1.5;
-  text-shadow: #053d45, 2px;
+  padding-left: 14px;
+  text-align: center;
 }
 
 .resume img {
   align-items: center;
+  border-radius: 50%;
 }
 
 .resume button {
@@ -84,7 +92,7 @@ h1 {
   line-height: 2;
   margin: 1rem;
   padding: 1rem 2rem;
-  color: #d8ef6e;
+  color: #def03d;
   transition: 0, 5s;
 }
 
@@ -96,7 +104,7 @@ h1 {
 
 @keyframes sombra {
   0% {
-    box-shadow: 0 0 0 0 #d8ef6e;
+    box-shadow: 0 0 0 0 #def03d;
   }
 }
 
@@ -123,13 +131,13 @@ h1 {
   float: left;
   padding: 20px;
   font-family: inherit;
-  font-size: 80px;
+  font-size: 70px;
   text-align: justify;
   width: 500px;
 }
 
 .card.active .details .saludo span {
-  animation: cambiaColor 3s forwards; /* animacion - nombre - tiempo que dura - estado final*/
+  animation: cambiaColor 8s forwards; /* animacion - nombre - tiempo que dura - estado final*/
 }
 
 @keyframes cambiaColor {
@@ -137,7 +145,7 @@ h1 {
     color: rgb(255, 255, 255);
   }
   100% {
-    color: #d2e054;
+    color: #def03d;
   }
 }
 
@@ -146,6 +154,7 @@ h1 {
   height: 500px;
   margin-left: 300px;
   align-self: flex-end;
+  border-radius: 50%;
 }
 
 .card.active button {
@@ -155,7 +164,7 @@ h1 {
   margin: 1rem;
   padding: 1.25rem 0.625rem;
   margin: 0.625rem 0.25rem;
-  color: #d8ef6e;
+  color: #def03d;
   transition: 0, 5s;
 }
 
@@ -167,12 +176,8 @@ h1 {
 
 @keyframes sombra {
   0% {
-    box-shadow: 0 0 0 0 #d8ef6e;
+    box-shadow: 0 0 0 0 #def03d;
   }
-}
-
-img {
-  border-radius: 50%;
 }
 
 footer {
@@ -186,8 +191,7 @@ footer {
 }
 
 .navbar {
-  background-color: #f40707;
-  color: #360e9d;
+  background-color: rgba(0, 0, 0, 0.627);
   display: flex;
   justify-content: space-around;
   padding: 10px;
@@ -197,10 +201,18 @@ footer {
   position: relative;
 }
 
-.navbtn button {
+.navbtn button h2 {
   background-color: transparent;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bolder;
+  font-size: xx-large;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-shadow: 0 0 0.15em;
   border: none;
-  color: #000000;
+  color: #fff;
+
   cursor: pointer;
 }
 
@@ -232,14 +244,6 @@ ul li button {
 ul li button:hover {
   background-color: #e40fd2;
 }
-
-#btn-home {
-  background-color: transparent;
-  border: none;
-  color: #000000;
-  cursor: pointer;
-}
-
 #loading-gif {
   display: none;
   position: fixed;
@@ -247,13 +251,36 @@ ul li button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: whitesmoke;
+  background-image: url(background\ card\ gif.jpg);
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  animation: agrandar 1s ease-in-out forwards;
 }
 
 #loading-gif img {
-  width: 100px; /* Ajusta el tamaño del GIF según tus necesidades */
-  height: 100px;
+  animation: achicar 2s ease-in-out;
+  box-shadow: inset 0px 0px 10px 10px #000;
+  clip-path: circle(41%);
+}
+
+@keyframes agrandar {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes achicar {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Slightly larger in the middle of the animation */
+  }
 }

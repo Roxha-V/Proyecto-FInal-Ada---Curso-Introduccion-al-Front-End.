@@ -22,13 +22,16 @@
         <h2>Personajes</h2>
 
         <div class="navbar">
-            <button id="btn-home" href="#">Home</button>
+            <button class="navbtn" id="btn-home">
+                <h2 id="home">Home</h2>
+            </button>
 
             <div class="navbtn">
                 <button id="btn-gender">Gender</button>
                 <ul class="gender-dropdown">
                     <li><button id="btn-female">Female Characters</button></li>
                     <li><button id="btn-male">Male Characters</button></li>
+                    <li><button id="btn-gender-less">Genderless Characters</button></li>
                     <li><button id="btn-unknown-gender">Other Genders Characters</button></li>
                 </ul>
             </div>
@@ -49,16 +52,30 @@
                     <li><button id="btn-alien">Alien Character</button></li>
                 </ul>
             </div>
+
         </div>
 
 
         <div class="container" id="cards-container">
-            <!-- aca empieza la tarjeta de cada personaje -->
-
+            <!-- aca empieza la tarjeta de cada personaje en js -->
         </div>
 
+        <div id="pagination">
+            <!-- botones para paginacion -->
+            <button id="btn-prev" disabled="true">Previous Page</button>
+            <button id="btn-first">First Page</button>
+
+            <ul id="page-numbers">
+
+            </ul>
+
+            <button id="btn-next">Next Page</button>
+            <button id="btn-last">Last Page</button>
+        </div>
+
+
         <div id="loading-gif">
-            <img src="portal-rick-and-morty.gif" alt="Transporting to character...">
+            <img src="card gif.gif" alt="Transporting to character...">
         </div>
 
 
