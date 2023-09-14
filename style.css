@@ -222,8 +222,8 @@ header {
   justify-content: space-around;
 }
 .navbtn-container {
-  position: relative; /* Establece el contenedor como posición relativa */
-  display: inline-block; /* Asegura que el contenedor no ocupe todo el ancho */
+  position: relative;
+  display: inline-block;
 }
 
 .navbtn {
@@ -237,7 +237,7 @@ header {
   background-color: #000;
   font-family: inherit;
   font-size: 30px;
-  cursor: pointer; /* Cambia el cursor al pasar el ratón por encima */
+  cursor: pointer;
 }
 .navbtn:hover {
   transform: scale(1.1);
@@ -245,12 +245,12 @@ header {
 
 .dropdown ul {
   display: none;
-  position: absolute; /* Posición absoluta con respecto al contenedor padre */
-  top: 100%; /* Coloca el menú desplegable debajo del botón */
+  position: absolute;
+  top: 100%;
   left: 0;
 
   min-width: 150px;
-  z-index: 1; /* Asegura que el menú esté por encima de otros elementos */
+  z-index: 1;
 }
 
 .navbtn-container:hover .dropdown {
@@ -351,7 +351,7 @@ ul {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1); /* Slightly larger in the middle of the animation */
+    transform: scale(1.1);
   }
 }
 
