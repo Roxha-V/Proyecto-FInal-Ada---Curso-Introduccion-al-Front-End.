@@ -1,3 +1,4 @@
+
 const container = document.getElementById("cards-container"); /*console.log (container)*/ /*se crea variable para definir que cuando se llame a esa variable, 
                                                                es porque se esta seleccionando a los elementos dentro de main-container,
                                                               que es un elemento del DOM - siempre esto se pone por encima ya que se
@@ -24,7 +25,7 @@ function getCharacters(genderValue = "", statusValue = "", speciesValue = "", pa
     .then(data => {
 
       renderInfo(data.info)  /*info y data son etiquetas que ya vienen en el json de la api para buscar informacion*/
-      totalPages = (data.info.pages) /*totalpages es una variable No una func)*/
+      totalPages = data.info.pages /*totalpages es una variable No una func)*/
       renderCharacters(data.results)
       renderPages()
     })
@@ -36,9 +37,11 @@ function getCharacters(genderValue = "", statusValue = "", speciesValue = "", pa
 function renderInfo(objInfo) {
   Informacion = objInfo;
 }
-getCharacters();
-/*console.log(getCharacters) - ver si funciona la funcion*/
 
+document.addEventListener('DOMContentLoaded', function () {
+  getCharacters();
+  /*console.log(getCharacters) - ver si funciona la funcion*/
+})
 
 
 function renderCharacters(characters) {
@@ -61,17 +64,17 @@ function renderCharacters(characters) {
           </div>
        
                 <img src="${character.image}" alt="${character.name}">
-              
+        <div class="details-container">
           <div class ="dtls">
                 <p>Gender : ${character.gender}</p> 
                 <p>From :${character.origin.name}</p>
                 <p>Last reported location : ${character.location.name}</p>
                 <p>Specie : ${character.species}</p>
                 <p>Life Status : ${character.status}</p>
-                <p>I appear in these episodes : ${character.episode.name}
+                
           </div>              
                 <button onClick="hideDetails('${character.id}')">Go back</button>
-            
+          </div> 
       </div>`
 
   })
@@ -93,12 +96,11 @@ const pageNumbers = document.getElementById("page-numbers");
 
 
 function renderPages() {
-  pageNumbers.innerHTML += `Página ${actualPage} de ${totalPages}`;
-
-  console.log(`Página ${actualPage} de ${totalPages}`)
+  pageNumbers.innerHTML += `${actualPage}`;
 }
 
 btnFirst.addEventListener('click', function () {
+  actualPage = 1
   getCharacters(_, _, _, actualPage);
   updatePrevBtn();
   updateNextBtn();
@@ -106,7 +108,7 @@ btnFirst.addEventListener('click', function () {
 });
 
 btnLast.addEventListener('click', function () {
-  actualPage = totalPages
+  actualPage = totalPages;
   getCharacters(_, _, _, actualPage);
   updatePrevBtn();
   updateNextBtn();
@@ -172,13 +174,13 @@ function updatePrevBtn() {
     //console.log("me ejecuto cuando actualpage > 1", actualPage)
 
   }
-  if (actualPage <= 1) {
+  if (actualPage <= 1)
     btnPrev.disabled = true;
-    /*console.log("me ejecuto cuando actualpage  < 1", actualPage)*/
-
-  }
+  /*console.log("me ejecuto cuando actualpage  < 1", actualPage)*/
 
 }
+
+
 
 /*la funcion updateprevbtn expresa una condicion  donde si el valor de actualpage
 es mayor a uno, el btnPrev permanece habilitado (ya que sera falso para disable),
@@ -333,7 +335,10 @@ homeBtn.addEventListener('click', () => {
   window.location.href = "index.html"
 });
 
-
+const homeImg = document.getElementById("logo1")
+homeImg.addEventListener('click', () => {
+  window.location.href = "index.html"
+});
 
 
 /*Se realiza una funcion donde el forEach permite iterar y por ende

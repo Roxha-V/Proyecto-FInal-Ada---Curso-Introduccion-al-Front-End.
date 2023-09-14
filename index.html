@@ -11,24 +11,23 @@
 <body>
 
     <header>
-        <h1>Rick y Morty</h1>
         <div class="logo">
-            <img src="" height="200" alt="logo-rick-y-morty">
+            <img id="logo1" src="logo.png" height="300" alt="logo-rick-y-morty">
+            <img class="logo2" src="logo 2.png" height="300" alt="logo-rick-y-morty">
         </div>
     </header>
 
 
     <nav>
-        <h2>Personajes</h2>
 
         <div class="navbar">
             <button class="navbtn" id="btn-home">
-                <h2 id="home">Home</h2>
+                Home
             </button>
 
-            <div class="navbtn">
-                <button id="btn-gender">Gender</button>
-                <ul class="gender-dropdown">
+            <div class="navbtn-container">
+                <button id="btn-gender" class="navbtn">Gender</button>
+                <ul class="dropdown">
                     <li><button id="btn-female">Female Characters</button></li>
                     <li><button id="btn-male">Male Characters</button></li>
                     <li><button id="btn-gender-less">Genderless Characters</button></li>
@@ -36,18 +35,18 @@
                 </ul>
             </div>
 
-            <div class="navbtn">
-                <button id="btn-status">Status</button>
-                <ul class="status-dropdown">
+            <div class="navbtn-container">
+                <button id="btn-status" class="navbtn">Status</button>
+                <ul class="dropdown">
                     <li><button id="btn-alive">Alive Characters</button></li>
                     <li><button id="btn-dead">Dead Characters</button></li>
                     <li><button id="btn-unknown-status">Unknow Status Characters</button></li>
                 </ul>
             </div>
 
-            <div class="navbtn">
-                <button id="btn-species">Species</button>
-                <ul class="species-dropdown">
+            <div class="navbtn-container">
+                <button id="btn-species" class="navbtn">Species</button>
+                <ul class="dropdown">
                     <li><button id="btn-human">Human Character</button></li>
                     <li><button id="btn-alien">Alien Character</button></li>
                 </ul>
@@ -62,15 +61,11 @@
 
         <div id="pagination">
             <!-- botones para paginacion -->
-            <button id="btn-prev" disabled="true">Previous Page</button>
-            <button id="btn-first">First Page</button>
-
-            <ul id="page-numbers">
-
-            </ul>
-
-            <button id="btn-next">Next Page</button>
-            <button id="btn-last">Last Page</button>
+            <button id="btn-first" class="pag-btn">First Page</button>
+            <button id="btn-prev" class="pag-btn" disabled="true">Previous Page</button>
+            <div id="page-numbers">Archive N°</div>
+            <button id="btn-next" class="pag-btn">Next Page</button>
+            <button id="btn-last" class="pag-btn">Last Page</button>
         </div>
 
 
@@ -81,9 +76,10 @@
 
         <footer class="footer">
 
-            <p>Proyecto Final ADA - Rick and Morty - <strong>Valverde, Rocio</strong></p>
+            <p>Proyecto Final ADA - Rick and Morty -Septiembre 2023 </p>
 
-            <p>Septiembre 2023</p>
+            <p class="alumna"><strong>Valverde, Rocio </strong></p>
+
 
         </footer>
         <script src="main.js"></script>
