@@ -9,6 +9,11 @@ let info
 let episode
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  getCharacters();
+  /*console.log(getCharacters) - ver si funciona la funcion*/
+})
+
 
 
 /*funcion comprobada y chequeada solo datos character*/
@@ -38,66 +43,62 @@ function renderInfo(objInfo) {
   Informacion = objInfo;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  getCharacters();
-  /*console.log(getCharacters) - ver si funciona la funcion*/
-})
-
 
 function renderCharacters(characters) {
   characters.forEach(character => {
     container.innerHTML += `
       <div class="card" id="card${character.id}">  
          
-        <div class="resume">
-                <h2>This Character Is Called <br> ${character.name}</h2>
-                <img src="${character.image}" alt="${character.name}">
-                <button class="detalles-personaje" onClick="toogleInfo('${character.id}')"> I want to know more </button>
-        </div>
-                         
-     <div class="details">
-          <div class ="saludo">
-                   <h2> Hello there!,
-                   <br> I'm 
-                   <span>${character.name}</span>
-                   </h2>
-          </div>
-       
-                <img src="${character.image}" alt="${character.name}">
-        <div class="details-container">
-          <div class ="dtls">
-                <p>Gender : ${character.gender}</p> 
-                <p>From :${character.origin.name}</p>
-                <p>Last reported location : ${character.location.name}</p>
-                <p>Specie : ${character.species}</p>
-                <p>Life Status : ${character.status}</p>
+                <div class="resume">
+                        <h2>This Character Is Called <br> ${character.name}</h2>
+                        <img src="${character.image}" alt="${character.name}">
+                        <button class="detalles-personaje" onClick="toogleInfo('${character.id}')"> I want to know more </button>
+                </div>
                 
-          </div>              
-                <button onClick="hideDetails('${character.id}')">Go back</button>
-          </div> 
+                <div class="details">
+                    <div class ="saludo">
+                            <h2> Hello there!,
+                            <br> I'm 
+                            <span>${character.name}</span>
+                            </h2>
+                    </div>
+          
+                   <img src="${character.image}" alt="${character.name}">
+           
+                  <div class="details-container">
+                        <div class ="dtls">
+                          <p>Gender : ${character.gender}</p> 
+                          <p>From :${character.origin.name}</p>
+                          <p>Last reported location : ${character.location.name}</p>
+                          <p>Specie : ${character.species}</p>
+                          <p>Life Status : ${character.status}</p>
+                         
+                </div>              
+                   
+                        <button onClick="hideDetails('${character.id}')">Go back</button>
+                  </div> 
       </div>`
-
   })
 }
 
+
+function renderPages() {
+  const pageNumbers = document.getElementById("page-numbers").textContent = ` Archive N° ${actualPage}` /*esto haria que llame el el emento en el dom , mientras que el text content */
+}
 
 /*paginacion*/
 
 /*variables*/
 let actualPage = 1; /* contador - rastrea pag actual */
 
-let totalPages = 1; /* almacena el número total de páginas */
+totalPages = actualPage; /* almacena el número total de páginas */
 
 const btnPrev = document.getElementById("btn-prev");
 const btnNext = document.getElementById("btn-next");
 const btnFirst = document.getElementById("btn-first");
 const btnLast = document.getElementById("btn-last");
-const pageNumbers = document.getElementById("page-numbers");
 
 
-function renderPages() {
-  pageNumbers.innerHTML += `${actualPage}`;
-}
 
 btnFirst.addEventListener('click', function () {
   actualPage = 1
@@ -112,7 +113,8 @@ btnLast.addEventListener('click', function () {
   getCharacters(_, _, _, actualPage);
   updatePrevBtn();
   updateNextBtn();
-  renderPages();
+  renderPages()
+
 });
 
 
@@ -206,35 +208,45 @@ páginas, por ende si la condicion se cumple,
 
 /*Portal gif*/
 
+const portalLoading = document.getElementById("loading-gif");
+
+portalLoading.onload = function () {
+  ocultarPortal()
+  // Muestra la tarjeta de personaje una vez que se haya cargado la imagen
+}
+
 function mostrarPortal() {  //funcion para mostrar "portal" //
-  const portalLoading = document.getElementById("loading-gif");
   portalLoading.style.display = "flex";
 }
 
 function ocultarPortal() {  //funcion para ocultar "portal" //
-  const portalLoading = document.getElementById("loading-gif");
   portalLoading.style.animation = "none";
   portalLoading.style.display = "none";
 }
 
-/* activar y desactivar card- toogle*/
+
+
+/* activar y desactivar card- toogle para que se ejecute luego del gif*/
+
 
 
 function validarClassNameActivo(string) { /*parametro es de tipo string , opera para buscar una coincidencia con palabera active , osea si el string contiene (osea si encuentra coincidencia es true) */
   return string.includes("active")
-
 }
 
-function toogleInfo(id) {  // esta fn cambia los estados entre activo y inactivo, osea alterna la clase "active" en un elemento DOM (card/nodopadre) con el ID que se le da.
-  mostrarPortal(); /*muestra el gif al tocar el boton de info del personaje*/
+function toogleInfo(id) { // esta fn cambia los estados entre activo y inactivo, osea alterna la clase "active" en un elemento DOM (card/nodopadre) con el ID que se le da.
 
-  let nodoPadre = document.getElementById(`card${id}`) //console.log(nodoPadre.className)
+  mostrarPortal();
+  /*muestra el gif al tocar el boton de info del personaje*/
 
 
   setTimeout(() => {   /*establece un tiempo de demora que dura la funcion*/
     ocultarPortal();
-  }, 2700);
+  }, 2000);
 
+
+  let nodoPadre = document.getElementById(`card${id}`)
+  //console.log(nodoPadre.className)
   if (validarClassNameActivo(nodoPadre.className)) { // condicion:solo me ejecuto cuando la card esta activa y deberia cambiar al estado contrario
 
     nodoPadre.className = nodoPadre.className.replace("active", "")

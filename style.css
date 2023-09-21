@@ -4,6 +4,58 @@
   box-sizing: border-box;
 }
 
+:root {
+  --fuente-base: font-size: 16px;
+  --desktop: width 1920px;
+  --small-notebook: width 1366px;
+  --tablet: width 768px;
+  --mobile-large: width 426px;
+}
+
+/*MEDIA QUERYS*/
+
+/*DESKTOP*/
+@media screen and (max-width: 1920px) and (min-width: 1366px) {
+  :root {
+    font-size: var(--fuente-base);
+  }
+}
+
+/*NOTEBOOK*/
+@media screen and (max-width: 1366px) and (min-width: 768px) {
+  :root {
+    --fuente-base: 15px;
+  }
+
+  .logo2 {
+    padding-left: 40px;
+    size: 400px;
+  }
+  
+  
+}
+
+/*TABLET*/
+@media screen and (max-width: 768px) and (min-width: 426px) {
+  :root {
+    --fuente-base: 12px;
+  }
+
+  img.logo2 {
+    padding-left: 20px;
+    size: 200px;
+  }
+  
+
+}
+
+/*MOBILE*/
+@media screen and (max-width: 426px) {
+  :root {
+    --fuente-base: 10px;
+  }
+}
+
 body {
   margin: 0;
   background-image: url(pagebackground.jpg);
@@ -32,45 +84,49 @@ header {
 
 .logo2 {
   padding-left: 60px;
-  size: 500px;
+  max-width: 3%;
+  height: auto;
 }
 
 .logo2:hover {
   transform: scale(1.1);
 }
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+ 
 }
 
 .contenedor img {
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 
 .contenedor-img img {
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 
 .card {
   width: 500px;
   height: 600px;
-  border: 4px solid #def03d;
+  border: 0.25rem solid #def03d;
   background-color: #000000ec;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px;
-  border-radius: 10px;
+  margin: 0.625rem;
+  border-radius: 0.625rem;
   font-family: "Courier New", Courier, monospace;
   color: rgb(255, 255, 255);
   text-align: center;
   transition: all 0.3s ease;
+  font-size: 1rem;
 }
 
 .card img {
@@ -83,11 +139,12 @@ header {
 }
 
 .resume h2 {
-  padding-bottom: 13px;
+  padding-bottom: 0.8125rem;
   font-weight: 400;
   line-height: 1.5;
-  padding-left: 14px;
+  padding-left: 0.875rem;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .resume img {
@@ -97,13 +154,14 @@ header {
 
 .resume button {
   background: none;
-  border: 3px solid;
+  border: 0.1875rem solid;
   font: inherit;
   line-height: 2;
   margin: 1rem;
   padding: 1rem 2rem;
   color: #def03d;
   transition: 0, 5s;
+  font-size: 1rem;
 }
 
 .resume button:hover,
@@ -125,35 +183,34 @@ header {
 .card.active {
   z-index: 1000;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+  bottom: 0;
+  width: 95%;
+  height: 95vh;
   position: fixed;
-
-  padding: 50px;
-  display: inline;
+  display: flex;
+  flex-direction: column;
   .resume {
     display: none;
   }
   .details {
     display: inline;
     width: 100%;
-    max-width: 600px;
     height: 100vh;
   }
 }
 
 .card.active .details .saludo {
-  float: left;
-  padding: 20px;
-  font-family: inherit;
-  font-size: 70px;
-  text-align: justify;
-  width: 500px;
+    float: left;
+    padding-left: 5.25rem;
+    padding-top: 2rem;
+    font-family: inherit;
+    text-align: justify;
+    width: 31.25rem;
+    font-size: 4rem;
 }
 
 .card.active .details .saludo span {
-  animation: cambiaColor 7s forwards; /* animacion - nombre - tiempo que dura - estado final*/
+  animation: cambiaColor 5s forwards; /* animacion - nombre - tiempo que dura - estado final*/
 }
 
 @keyframes cambiaColor {
@@ -166,42 +223,44 @@ header {
 }
 
 .card.active img {
-  width: 500px;
-  height: 500px;
-  margin-left: 180px;
-
-  align-self: flex-end;
+  width: 30rem;
+  height: 30rem;
+  margin-left: 17rem;
+  margin-top: 3rem;
 }
 
 .details-container {
   margin: auto;
-  transition: 4s ease-in-out;
+  transition: 10s ease-in-out;
 }
 .dtls {
-  align-items: center;
-  font-size: 30px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
   text-align: left;
-  padding: 40px;
-  margin-right: 200px;
-  margin-left: 485px;
-  border-left: 7px solid #043c6e;
-  line-height: 50px;
+  border-left-width: 15px;
+  padding-left: 10px;
+  margin-left: 36rem;
   color: aliceblue;
+  border-left: 1rem solid #043c6e;
+  line-height: 3rem;
+  margin-top: 4.5rem;
+  font-size: 2rem; 
+  transition: all 5s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .card.active button {
   background: transparent;
-  border: 5px solid;
+  border: 0.3125rem solid;
   font: inherit;
-  font-size: 30px;
-  padding: 35px 65px;
-  margin-right: 210px;
-  margin-bottom: 100px;
+  font-size: 1.5rem;
+  padding: 2.1875rem 4.0625rem;
   color: #def03d;
   position: absolute;
-  bottom: 0%;
-  right: 0%;
-  transition: 4s ease-in-out;
+  bottom: 2rem;
+  right: 5rem;
+  transition: 3s ease-in-out ;
+  
 }
 
 .card.active button:hover,
@@ -228,7 +287,7 @@ header {
 
 .navbtn {
   background: none;
-  border: 3px solid;
+  border: 0.1875rem solid;
   font: inherit;
   line-height: 2;
   margin: 1rem;
@@ -236,7 +295,7 @@ header {
   color: #def03d;
   background-color: #000;
   font-family: inherit;
-  font-size: 30px;
+  font-size: 2rem;
   cursor: pointer;
 }
 .navbtn:hover {
@@ -249,7 +308,7 @@ header {
   top: 100%;
   left: 0;
 
-  min-width: 150px;
+  min-width: 9.375rem;
   z-index: 1;
 }
 
@@ -261,11 +320,11 @@ header {
   width: 100%;
   border: none;
   font-family: inherit;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   background-color: transparent;
   text-align: left;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .dropdown li button:hover {
@@ -279,7 +338,7 @@ ul {
   display: none;
   position: absolute;
   background-color: #def03dcd;
-  min-width: 150px;
+  min-width: 9.375rem;
 }
 #pagination {
   background-color: #000;
@@ -290,22 +349,22 @@ ul {
 
 #page-numbers {
   background: none;
-  border-left: 3px solid;
-  border-right: 3px solid;
+  border-left: 0.1875rem solid;
+  border-right: 0.1875rem solid;
   font: inherit;
   line-height: 2;
-  margin: 16px;
-  padding: 16px 32px;
+  margin: 1rem;
+  padding: 1rem 2rem;
   color: #def03d;
   font-weight: 600;
 }
 .pag-btn {
   background: none;
-  border: 3px solid;
+  border: 0.1875rem solid;
   font: inherit;
   line-height: 2;
-  margin: 16px;
-  padding: 16px 32px;
+  margin: 1rem;
+  padding: 1rem 2rem;
   color: #def03d;
   cursor: pointer;
 }
@@ -329,7 +388,7 @@ ul {
 }
 
 #loading-gif img {
-  animation: achicar 2s ease-in-out;
+  animation: achicar 2s ease-in;
   box-shadow: inset 0px 0px 10px 10px #000;
   clip-path: circle(41%);
 }
@@ -359,18 +418,18 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  height: 100px;
-  padding: 0 40px;
+  height: 6.25rem;
+  padding: 0 2.5rem;
   background-image: linear-gradient(180deg, #0000007d, #000000);
 }
 
 footer p {
   font-family: inherit;
-  font-size: 30px;
+  font-size: 1.875rem;
   color: #def03d;
 }
 
 .alumna:hover {
   transform: scale(1.2);
-  padding-right: 15px;
+  padding-right: 0.9375rem;
 }
