@@ -415,12 +415,14 @@ ul {
 }
 
 footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 6.25rem;
-  padding: 0 2.5rem;
-  background-image: linear-gradient(180deg, #0000007d, #000000);
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-evenly;
+    
+    padding: 0 2.5rem;
+    background-image: linear-gradient(180deg, #0000007d, #000000);
+    flex-wrap: wrap;
+    align-items: flex-end;
 }
 
 footer p {
@@ -429,7 +431,14 @@ footer p {
   color: #def03d;
 }
 
-.alumna:hover {
+#alumna:hover {
+  cursor: pointer;
   transform: scale(1.2);
   padding-right: 0.9375rem;
+}
+
+#api-page:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  box-shadow: #a0a0a0;
 }

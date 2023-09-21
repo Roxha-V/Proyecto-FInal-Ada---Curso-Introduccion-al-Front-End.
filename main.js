@@ -353,6 +353,21 @@ homeImg.addEventListener('click', () => {
 });
 
 
+/*github link*/
+const studentGithub = document.getElementById("alumna")
+studentGithub.addEventListener('click', () => {
+  window.location.href = "https://github.com/Roxha-V"
+});
+
+
+/*api page*/
+const apiPage = document.getElementById("api-page")
+apiPage.addEventListener('click', () => {
+  window.location.href = "https://rickandmortyapi.com/"
+});
+
+
+
 /*Se realiza una funcion donde el forEach permite iterar y por ende
 mostrar por cada uno de los personajes que aparecen en el array
 del json los detalles de cada personaje, y  luego al haber invocado al DOM,
