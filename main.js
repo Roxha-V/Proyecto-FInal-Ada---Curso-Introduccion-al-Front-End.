@@ -67,11 +67,11 @@ function renderCharacters(characters) {
            
                   <div class="details-container">
                         <div class ="dtls">
-                          <p>Gender : ${character.gender}</p> 
-                          <p>From :${character.origin.name}</p>
-                          <p>Last reported location : ${character.location.name}</p>
-                          <p>Specie : ${character.species}</p>
-                          <p>Life Status : ${character.status}</p>
+                          <p><span>Gender:</span> ${character.gender}</p> 
+                          <p><span>From:</span> ${character.origin.name}</p>
+                          <p><span>Last reported location:</span> ${character.location.name}</p>
+                          <p><span>Specie:</span> ${character.species}</p>
+                          <p><span>Life Status:</span> ${character.status}</p>
                          
                 </div>              
                    
@@ -80,6 +80,8 @@ function renderCharacters(characters) {
       </div>`
   })
 }
+
+
 
 
 function renderPages() {

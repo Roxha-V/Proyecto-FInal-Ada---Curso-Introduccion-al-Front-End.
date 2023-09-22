@@ -4,58 +4,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --fuente-base: font-size: 16px;
-  --desktop: width 1920px;
-  --small-notebook: width 1366px;
-  --tablet: width 768px;
-  --mobile-large: width 426px;
-}
-
-/*MEDIA QUERYS*/
-
-/*DESKTOP*/
-@media screen and (max-width: 1920px) and (min-width: 1366px) {
-  :root {
-    font-size: var(--fuente-base);
-  }
-}
-
-/*NOTEBOOK*/
-@media screen and (max-width: 1366px) and (min-width: 768px) {
-  :root {
-    --fuente-base: 15px;
-  }
-
-  .logo2 {
-    padding-left: 40px;
-    size: 400px;
-  }
-  
-  
-}
-
-/*TABLET*/
-@media screen and (max-width: 768px) and (min-width: 426px) {
-  :root {
-    --fuente-base: 12px;
-  }
-
-  img.logo2 {
-    padding-left: 20px;
-    size: 200px;
-  }
-  
-
-}
-
-/*MOBILE*/
-@media screen and (max-width: 426px) {
-  :root {
-    --fuente-base: 10px;
-  }
-}
-
 body {
   margin: 0;
   background-image: url(pagebackground.jpg);
@@ -71,26 +19,819 @@ body {
   src: url(get_schwifty.ttf);
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  background-image: linear-gradient(180deg, #000000, #0000006c);
+
+
+
+:root {
+  --fuente-base: font-size: 16px;
+  --desktop: width 1920px;
+  --small-notebook: width 1366px;
+  --tablet: width 768px;
+  --mobile-large: width 426px;
 }
+
+/*MEDIA QUERYS*/
+
+
+/*DESKTOP*/
+@media screen and (max-width: 1920px) and (min-width: 1366px) {
+  :root {
+    font-size: 16px;
+  }
+  
+  .navbar {
+    background-image: linear-gradient(180deg, #0000006c, #00000000);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  #pagination {
+    background-color: #000;}
+
+
+    .card.active {
+      z-index: 1000;
+      top: 0;
+      bottom: 0;
+      width: 95%;
+      height: 95vh;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      .resume {
+        display: none;
+      }
+      .details {
+        display: inline;
+        width: 100%;
+        height: 100vh;
+      }
+    }
+    
+    .card.active .details .saludo {
+        float: left;
+        padding-left: 5.25rem;
+        padding-top: 2rem;
+        font-family: inherit;
+        text-align: justify;
+        width: 31.25rem;
+        font-size: 4rem;
+    }
+    
+    .card.active .details .saludo span {
+      animation: cambiaColor 5s forwards; /* animacion - nombre - tiempo que dura - estado final*/
+    }
+    
+    @keyframes cambiaColor {
+      0% {
+        color: rgb(255, 255, 255);
+      }
+      100% {
+        color: #def03d;
+      }
+    }
+    
+    .card.active img {
+      width: 30rem;
+      height: 30rem;
+      margin-left: 17rem;
+      margin-top: 3rem;
+    }
+    
+    .details-container {
+      margin: auto;
+      transition: 5s ease-in;
+    }
+
+    .details-container p span{
+      color: #def03d;
+    }
+  
+
+    .dtls {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      border-left-width: 15px;
+      padding-left: 10px;
+      margin-left: 36rem;
+      color: aliceblue;
+      border-left: 1rem solid #043c6e;
+      line-height: 3rem;
+      margin-top: 4.5rem;
+      font-size: 2rem; 
+      transition: all 5s cubic-bezier(0.4, 0, 1, 1);
+    }
+    
+    .card.active button {
+      background: transparent;
+      border: 0.3125rem solid;
+      font: inherit;
+      font-size: 1.5rem;
+      padding: 2.1875rem 4.0625rem;
+      color: #def03d;
+      position: absolute;
+      bottom: 2rem;
+      right: 5rem;
+      transition: 3s ease-in-out ;
+      
+    }
+    
+    .card.active button:hover,
+    .card.active button:focus {
+      animation: sombra 2s;
+      box-shadow: 0 0 0 1.5rem transparent;
+    }
+    
+    @keyframes sombra {
+      0% {
+        box-shadow: 0 0 0 0 #def03d;
+      }
+    }
+    
+
+    .logo{
+      display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+.logo img{
+  height:20rem;
+}
+
+
+    footer {
+      display: flex;
+      flex-direction: row;   
+      justify-content: space-evenly;
+      padding: 0 2.5rem;
+      background-image: linear-gradient(180deg, #0000007d, #000000);
+      flex-wrap: wrap;
+      align-items: center;
+  }
+}
+
+/*NOTEBOOK*/
+@media screen and (max-width: 1366px) and (min-width: 870px) {
+  :root {
+    --fuente-base: 14px;}
+    .navbar {
+      background-image: linear-gradient(180deg, #0000006c, #00000000);
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+    .navbtn-container {
+      position: relative;
+    }
+
+    #pagination {
+      background-color: #000;}
+
+
+      .card.active {
+        z-index: 1000;
+        top: 0;
+        bottom: 0;
+        width: 95%;
+        height: 95vh;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        .resume {
+          display: none;
+        }
+        .details {
+          display: inline;
+          width: 100%;
+          height: 100vh;
+        }
+      }
+      
+      .card.active .details .saludo {
+          float: left;
+          padding-left: 5.25rem;
+          padding-top: 2rem;
+          font-family: inherit;
+          text-align: justify;
+          width: 31.25rem;
+          font-size: 4rem;
+      }
+      
+      .card.active .details .saludo span {
+        animation: cambiaColor 5s forwards; /* animacion - nombre - tiempo que dura - estado final*/
+      }
+      
+      @keyframes cambiaColor {
+        0% {
+          color: rgb(255, 255, 255);
+        }
+        100% {
+          color: #def03d;
+        }
+      }
+      
+      .card.active img {
+        width: 30rem;
+        height: 30rem;
+        margin-left: 17rem;
+        margin-top: 3rem;
+      }
+      
+      .details-container {
+        margin: auto;
+        transition: 10s ease-in-out;
+      }
+
+      .details-container p span{
+        color: #def03d;
+      }
+
+      
+    
+      .dtls {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        border-left-width: 15px;
+        padding-left: 10px;
+        margin-left: 36rem;
+        color: aliceblue;
+        border-left: 1rem solid #043c6e;
+        line-height: 3rem;
+        margin-top: 4.5rem;
+        font-size: 2rem; 
+        transition: all 5s cubic-bezier(0.4, 0, 1, 1);
+      }
+      
+      .card.active button {
+        background: transparent;
+        border: 0.3125rem solid;
+        font: inherit;
+        font-size: 1.5rem;
+        padding: 2.1875rem 4.0625rem;
+        color: #def03d;
+        position: absolute;
+        bottom: 2rem;
+        right: 5rem;
+        transition: 3s ease-in-out ;
+        
+      }
+      
+      .card.active button:hover,
+      .card.active button:focus {
+        animation: sombra 2s;
+        box-shadow: 0 0 0 1.5rem transparent;
+      }
+      
+      @keyframes sombra {
+        0% {
+          box-shadow: 0 0 0 0 #def03d;
+        }
+      }
+      
+
+      .logo{
+        display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    .logo img{
+      height:15rem;
+    }
+    
+
+      footer {
+        display: flex;
+        flex-direction: row;   
+        justify-content: space-evenly;
+        padding: 0 2.5rem;
+        background-image: linear-gradient(180deg, #0000007d, #000000);
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+    
+
+  }
+
+
+  
+
+ /*TABLET grande*/
+@media screen and (max-width: 870px) and (min-width: 500px) {
+  :root {
+    --fuente-base: 12px;}
+
+    #pagination {
+      background:#000000dc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+  
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+ }
+
+.navbar {
+  background-image: linear-gradient(180deg, #0000006c, #00000000);
+  display: inline-block;
+  }
+
+.logo img{
+  height:12.5rem;
+}
+
+
+  .logo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  
+
+
+
+.card.active {
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  margin-left: 8.6rem;
+  width: 23.5rem;
+  height: 105vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  .resume {
+    display: none;
+  }
+  .details {
+    display: inline;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+  
+.card.active .details .saludo h2 {
+display: inline;
+font-size: 2.5rem;
+}
+.card.active .details .saludo span {
+  animation: cambiaColor 5s forwards; /* animacion - nombre - tiempo que dura - estado final*/
+}
+
+@keyframes cambiaColor {
+  0% {
+    color: rgb(255, 255, 255);
+  }
+  100% {
+    color: #def03d;
+  }
+}
+
+.card.active img {
+  width: 9rem;
+  height: 9rem;
+  margin: 1rem;;
+}
+
+.details-container {
+  margin: auto;
+  transition: 8s ease-in-out;
+}
+
+.details-container p span{
+  color: #def03d;
+}
+
+
+.dtls {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 1rem;
+  margin-left: 3rem;
+  color: aliceblue;
+  border-left: 1rem solid #043c6e;
+  line-height: 3rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  transition: all 5s cubic-bezier(0.4, 0, 1, 1);
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+.card.active button {
+  background: transparent;
+  border: 0.3125rem solid;
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 1.5rem 3.5rem;
+  color: #def03d;
+  position: absolute;
+  bottom: 2rem;
+  right: 5rem;
+  transition: 3s ease-in-out ;
+  
+}
+
+.card.active button:hover,
+.card.active button:focus {
+  animation: sombra 2s;
+  box-shadow: 0 0 0 1.5rem transparent;
+}
+
+@keyframes sombra {
+  0% {
+    box-shadow: 0 0 0 0 #def03d;
+  }
+}
+
+
+.logo img{
+  height:12.5rem;
+}
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 2.5rem;
+  background-image: linear-gradient(180deg, #0000007d, #000000);
+  flex-wrap: wrap;
+  align-items: center;
+}
+}
+
+
+ /*TABLET chica*/
+ @media screen and (max-width: 500px) and (min-width: 400px) {
+  :root {
+    --fuente-base: 12px;}
+
+    #pagination {
+      background:#000000dc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+  
+  }
+  
+  .navbar {
+    background-image: linear-gradient(180deg, #0000006c, #00000000);
+    display: inline-block;
+
+    }
+
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+ 
+}
+
+
+.card.active {
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  margin-left: 8.6rem;
+  width: 23.5rem;
+  height: 105vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  .resume {
+    display: none;
+  }
+  .details {
+    display: inline;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+  
+.card.active .details .saludo h2 {
+display: inline;
+font-size: 2.5rem;
+}
+.card.active .details .saludo span {
+  animation: cambiaColor 5s forwards; /* animacion - nombre - tiempo que dura - estado final*/
+}
+
+@keyframes cambiaColor {
+  0% {
+    color: rgb(255, 255, 255);
+  }
+  100% {
+    color: #def03d;
+  }
+}
+
+.card.active img {
+  width: 9rem;
+  height: 9rem;
+  margin: 1rem;;
+}
+
+.details-container {
+  margin: auto;
+  transition: 8s ease-in-out;
+}
+
+.details-container p span{
+  color: #def03d;
+}
+
+
+.dtls {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 1rem;
+  margin-left: 3rem;
+  color: aliceblue;
+  border-left: 1rem solid #043c6e;
+  line-height: 3rem;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  transition: all 5s cubic-bezier(0.4, 0, 1, 1);
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+.card.active button {
+  background: transparent;
+  border: 0.3125rem solid;
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 1.5rem 3.5rem;
+  color: #def03d;
+  position: absolute;
+  bottom: 2rem;
+  right: 5rem;
+  transition: 3s ease-in-out ;
+  
+}
+
+.card.active button:hover,
+.card.active button:focus {
+  animation: sombra 2s;
+  box-shadow: 0 0 0 1.5rem transparent;
+}
+
+@keyframes sombra {
+  0% {
+    box-shadow: 0 0 0 0 #def03d;
+  }
+}
+
+.logo{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.logo img{
+  height:10.5rem;
+}
+
+
+
+
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 2.5rem;
+  background-image: linear-gradient(180deg, #0000007d, #000000);
+  flex-wrap: wrap;
+  align-items: stretch;
+  line-height: 4rem;
+}
+
+}
+  
+
+/*MOBILE*/
+@media screen and (max-width: 400px) {
+  :root {
+    --fuente-base: 10px; }
+
+    #pagination {
+      background:#000000dc;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 2rem;
+      justify-content: space-evenly;
+      flex-wrap: wrap;  
+  }
+  
+
+  .card.active {
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    margin-left: 8.6rem;
+    width: 23.5rem;
+    height: 105vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    .resume {
+      display: none;
+    }
+    .details {
+      display: inline;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+  
+    
+  .card.active .details .saludo h2 {
+  display: inline;
+  font-size: 2.5rem;
+  }
+  .card.active .details .saludo span {
+    animation: cambiaColor 5s forwards; /* animacion - nombre - tiempo que dura - estado final*/
+  }
+  
+  @keyframes cambiaColor {
+    0% {
+      color: rgb(255, 255, 255);
+    }
+    100% {
+      color: #def03d;
+    }
+  }
+  
+  .card.active img {
+    width: 9rem;
+    height: 9rem;
+    margin: 1rem;;
+  }
+  
+  .details-container {
+    margin: auto;
+    transition: 8s ease-in-out;
+  }
+
+  .details-container p span{
+    color: #def03d;
+  }
+
+
+  .dtls {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 1rem;
+    margin-left: 3rem;
+    color: aliceblue;
+    border-left: 1rem solid #043c6e;
+    line-height: 3rem;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    transition: all 5s cubic-bezier(0.4, 0, 1, 1);
+    font-weight: 600;
+    letter-spacing: normal;
+  }
+  
+  .card.active button {
+    background: transparent;
+    border: 0.3125rem solid;
+    font: inherit;
+    font-size: 1.5rem;
+    padding: 1.5rem 3.5rem;
+    color: #def03d;
+    position: absolute;
+    bottom: 2rem;
+    right: 5rem;
+    transition: 3s ease-in-out ;
+    
+  }
+  
+  .card.active button:hover,
+  .card.active button:focus {
+    animation: sombra 2s;
+    box-shadow: 0 0 0 1.5rem transparent;
+  }
+  
+  @keyframes sombra {
+    0% {
+      box-shadow: 0 0 0 0 #def03d;
+    }
+  }
+  
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 2.5rem;
+  background-image: linear-gradient(180deg, #0000007d, #000000);
+  flex-wrap: wrap;
+  align-items: stretch;
+  line-height: 3rem;
+}
+
+.logo{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.logo img{
+  height:8.5rem;
+}
+
+
+.dropdown ul {
+  display:none;
+  top: 100%;
+  left: 0;
+  min-width: 9.375rem;
+ 
+}
+
+}
+
+
+
+
+
+
+  
+
+
+  ----------------------------------------------------------------------------------
+  header {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(180deg, #000000, #0000006c);
+  }
+
 
 #logo1:hover {
   transform: scale(1.1);
   cursor: pointer;
-}
+  
+  }
 
 .logo2 {
-  padding-left: 60px;
-  max-width: 3%;
-  height: auto;
+  clip-path: circle(50.2% at 50% 50%);
+  padding: 6px;
+  margin: 20px;
+
 }
 
 .logo2:hover {
   transform: scale(1.1);
-}
+  box-shadow: inset 5px 12px 20px 20px #def03d;
+  }
+  
+
 .container {
     display: flex;
     flex-direction: row;
@@ -180,105 +921,9 @@ header {
   display: none;
 }
 
-.card.active {
-  z-index: 1000;
-  top: 0;
-  bottom: 0;
-  width: 95%;
-  height: 95vh;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  .resume {
-    display: none;
-  }
-  .details {
-    display: inline;
-    width: 100%;
-    height: 100vh;
-  }
-}
-
-.card.active .details .saludo {
-    float: left;
-    padding-left: 5.25rem;
-    padding-top: 2rem;
-    font-family: inherit;
-    text-align: justify;
-    width: 31.25rem;
-    font-size: 4rem;
-}
-
-.card.active .details .saludo span {
-  animation: cambiaColor 5s forwards; /* animacion - nombre - tiempo que dura - estado final*/
-}
-
-@keyframes cambiaColor {
-  0% {
-    color: rgb(255, 255, 255);
-  }
-  100% {
-    color: #def03d;
-  }
-}
-
-.card.active img {
-  width: 30rem;
-  height: 30rem;
-  margin-left: 17rem;
-  margin-top: 3rem;
-}
-
-.details-container {
-  margin: auto;
-  transition: 10s ease-in-out;
-}
-.dtls {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  border-left-width: 15px;
-  padding-left: 10px;
-  margin-left: 36rem;
-  color: aliceblue;
-  border-left: 1rem solid #043c6e;
-  line-height: 3rem;
-  margin-top: 4.5rem;
-  font-size: 2rem; 
-  transition: all 5s cubic-bezier(0.4, 0, 1, 1);
-}
-
-.card.active button {
-  background: transparent;
-  border: 0.3125rem solid;
-  font: inherit;
-  font-size: 1.5rem;
-  padding: 2.1875rem 4.0625rem;
-  color: #def03d;
-  position: absolute;
-  bottom: 2rem;
-  right: 5rem;
-  transition: 3s ease-in-out ;
-  
-}
-
-.card.active button:hover,
-.card.active button:focus {
-  animation: sombra 2s;
-  box-shadow: 0 0 0 1.5rem transparent;
-}
-
-@keyframes sombra {
-  0% {
-    box-shadow: 0 0 0 0 #def03d;
-  }
-}
-
 .navbar {
   background-image: linear-gradient(180deg, #0000006c, #00000000);
-  display: flex;
-  justify-content: space-around;
+ 
 }
 .navbtn-container {
   position: relative;
@@ -307,7 +952,6 @@ header {
   position: absolute;
   top: 100%;
   left: 0;
-
   min-width: 9.375rem;
   z-index: 1;
 }
@@ -340,11 +984,14 @@ ul {
   background-color: #def03dcd;
   min-width: 9.375rem;
 }
+
 #pagination {
-  background-color: #000;
+  
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
+  font-size: 1.875rem; ;
+  padding: 1rem 2rem;
+
 }
 
 #page-numbers {
@@ -414,16 +1061,7 @@ ul {
   }
 }
 
-footer {
-    display: flex;
-    flex-direction: row;   
-    justify-content: space-evenly;
-    
-    padding: 0 2.5rem;
-    background-image: linear-gradient(180deg, #0000007d, #000000);
-    flex-wrap: wrap;
-    align-items: flex-end;
-}
+
 
 footer p {
   font-family: inherit;
