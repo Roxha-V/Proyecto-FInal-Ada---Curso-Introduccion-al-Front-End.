@@ -61,5 +61,5 @@ Conclusiones:
 En conclusión, este proyecto personal de proyecto ha sido una oportunidad invaluable para aplicar mis habilidades de desarrollo web front-end y crear una presencia en línea que refleje auténticamente mi identidad profesional. A través de este, aspiro a abrir puertas a oportunidades laborales y colaboraciones en el campo del desarrollo web.
 
 Agradecimientos Especiales:
-Me gustaría expresar mi más sincero agradecimiento por la paciencia y las enseñanzas de Aldana y Nahuel durante el curso que brindaron. Su guía ha sido fundamental en mi desarrollo como desarrollador web.
+Me gustaría expresar mi más sincero agradecimiento por la paciencia y las enseñanzas de Aldana y Nahuel durante el curso que brindaron. Su guía ha sido fundamental en mi desarrollo como desarrolladora web.
 --------------------------------------------------------
